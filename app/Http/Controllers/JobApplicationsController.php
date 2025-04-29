@@ -16,8 +16,9 @@ class JobApplicationsController extends Controller
         
         $job_application = new JobApplication($request->job_application);
         $settings = new SystemSetting($request->settings);
+        $asset_path = $request->asset_path;
 
-        return Pdf::view('application', compact('job_application', 'settings'))
+        return Pdf::view('application', compact('job_application', 'settings', 'asset_path'))
             // ->withBrowsershot(function(Browsershot $browsershot){
             //     $browsershot->setNodeBinary('/opt/nodejs/bin/node')
             //     ->setNpmBinary('/opt/nodejs/bin/npm')
