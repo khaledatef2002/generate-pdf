@@ -49,7 +49,7 @@
         <div>
             <h1 class="fs-4 fw-bold">نموذج طلب توظيف بشركه بروكلين لاداره المطاعم</h1>
             <p class="mb-0 fw-bold fs-6">
-                التاريخ: {{ $job_application->created_at }}
+                التاريخ: {{ $job_application->created_at_formatted }}
             </p>
         </div>
         <img src="{{ $asset_path . "/storage/" . $settings->logo }}" style="height: 90px;">
