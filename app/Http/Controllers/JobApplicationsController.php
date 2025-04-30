@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\JobApplication;
+use App\Models\JobApplicationEducation;
 use App\Models\SystemSetting;
+use Faker\Calculator\Ean;
 use Illuminate\Http\Request;
 use Spatie\LaravelPdf\Enums\Format;
 use Spatie\LaravelPdf\Facades\Pdf;
@@ -14,8 +16,8 @@ class JobApplicationsController extends Controller
 {
     public function print(Request $request)
     {
-        
-        $job_application = new JobApplication($request->job_application);
+        $job_application = json_decode(json_encode($request->job_application));
+    
         $settings = new SystemSetting($request->settings);
         $asset_path = $request->asset_path;
 

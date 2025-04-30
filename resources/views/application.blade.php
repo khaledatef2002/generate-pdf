@@ -49,7 +49,7 @@
         <div>
             <h1 class="fs-4 fw-bold">نموذج طلب توظيف بشركه بروكلين لاداره المطاعم</h1>
             <p class="mb-0 fw-bold fs-6">
-                التاريخ: {{ $job_application->created_at->format('Y/m/d') }}
+                التاريخ: {{ $job_application->created_at }}
             </p>
         </div>
         <img src="{{ $asset_path . "/storage/" . $settings->logo }}" style="height: 90px;">
@@ -147,7 +147,7 @@
             <td colspan="2" width="40%">
                 <div class="d-flex justify-content-between align-items-center">
                     <span class="fw-bold">عدد الأطفال:</span>
-                    <span>{{ $job_application->no_of_childs }}</span>
+                    <span>{{ @$job_application->no_of_childs }}</span>
                     <span class="fw-bold" dir="ltr">No. of Children:</span>
                 </div>
             </td>
@@ -182,7 +182,7 @@
                     <td colspan="2" class="text-center">{{ $education->name }}</td>
                 </tr>
             @endforeach
-            @for ($i = 2 - $job_application->educations()->count(); $i > 0; $i--)
+            @for ($i = 2 - count($job_application->educations); $i > 0; $i--)
                 <tr>
                     <td colspan="4" class="text-center py-2"></td>
                     <td colspan="2" class="text-center py-2"></td>
@@ -274,7 +274,7 @@
                 <span class="d-block">سبب ترك العمل</span>
             </td>
         </tr>
-        @foreach ($job_application->workExperiences as $experience)
+        @foreach (@$job_application->workExperiences ?? [] as $experience)
                 <tr>
                     <td>{{ $experince->company_name }}</td>
                     <td>{{ $experince->working_duration }}</td>
@@ -283,7 +283,7 @@
                     <td>{{ $experince->reason_for_leaving }}</td>
                 </tr>
             @endforeach
-            @for ($i = 4 - $job_application->workExperiences()->count(); $i > 0; $i--)
+            @for ($i = 4 - count(@$job_application->workExperiences ?? []); $i > 0; $i--)
                 <tr>
                     <td class="text-center py-2"></td>
                     <td class="text-center py-2"></td>
