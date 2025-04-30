@@ -283,7 +283,7 @@
                     <td>{{ $experince->reason_for_leaving }}</td>
                 </tr>
             @endforeach
-            @for ($i = 5 - $job_application->workExperiences()->count(); $i > 0; $i--)
+            @for ($i = 4 - $job_application->workExperiences()->count(); $i > 0; $i--)
                 <tr>
                     <td class="text-center py-2"></td>
                     <td class="text-center py-2"></td>
