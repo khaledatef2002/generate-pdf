@@ -52,7 +52,7 @@
                 التاريخ: {{ $job_application->created_at->format('Y/m/d') }}
             </p>
         </div>
-        <img src="{{ $asset_path . "/storage/" . $settings->logo }}" style="width:100%;">
+        <img src="{{ $asset_path . "/storage/" . $settings->logo }}" style="height: 90px;">
     </header>
 
     <table>
@@ -71,7 +71,7 @@
             @if ($job_application->image)
                 <td colspan="2" rowspan="6" width="20%" class="text-center fw-bold">
                     <div>
-                        <img src="{{ $asset_path . "/storage/" . $job_application->image }}" height="90px">
+                        <img src="{{ $asset_path . "/storage/" . $job_application->image }}" style="width: 100%;">
                     </div>
                 </td>
             @else
