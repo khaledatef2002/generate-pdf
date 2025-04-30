@@ -20,11 +20,9 @@ class JobApplicationsController extends Controller
         $asset_path = $request->asset_path;
 
         return Pdf::view('application', compact('job_application', 'settings', 'asset_path'))
-            // ->withBrowsershot(function(Browsershot $browsershot){
-            //     $browsershot->setNodeBinary('/opt/nodejs/bin/node')
-            //     ->setNpmBinary('/opt/nodejs/bin/npm')
-            //     ->noSandbox();
-            // })
+            ->withBrowsershot(function(Browsershot $browsershot){
+                $browsershot->noSandbox();
+            })
             ->format(Format::A4)
             ->name($job_application->name . ".pdf")
             ->inline()->download();
