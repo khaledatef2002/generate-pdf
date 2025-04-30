@@ -47,12 +47,12 @@
 <body>
     <header class="d-flex justify-content-between align-items-center px-4">
         <div>
-            <h1 class="fs-4 fw-bold">نموذج طلب وظيفه بشركه بروكلين لاداره المطاعم</h1>
+            <h1 class="fs-4 fw-bold">نموذج طلب توظيف بشركه بروكلين لاداره المطاعم</h1>
             <p class="mb-0 fw-bold fs-6">
-                التاريخ: {{ $job_application->created_at->format('Y/m/d') }} : Date
+                التاريخ: {{ $job_application->created_at->format('Y/m/d') }}
             </p>
         </div>
-        <img src="{{ $asset_path . "/storage/" . $settings->logo }}" height="90px">
+        <img src="{{ $asset_path . "/storage/" . $settings->logo }}" style="width:100%;">
     </header>
 
     <table>
@@ -169,7 +169,7 @@
         </tr>
         <tr>
             <td colspan="4" class="fw-bold text-center">
-                <span class="d-block">المؤهلات وتاريخ حصولك عليها</span>
+                <span class="d-block">المؤهلات / السنة الدراسية وتاريخ الحصول عليها</span>
                 <span class="d-block">Qualifications obtained & date of certification</span>
             </td>
             <td colspan="2" class="fw-bold text-center">

@@ -8,6 +8,7 @@ use App\Models\SystemSetting;
 use Illuminate\Http\Request;
 use Spatie\LaravelPdf\Enums\Format;
 use Spatie\LaravelPdf\Facades\Pdf;
+use Spatie\Browsershot\Browsershot;
 
 class JobApplicationsController extends Controller
 {
